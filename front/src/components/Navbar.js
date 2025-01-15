@@ -1,27 +1,27 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../image/aaaa.jpg";
 
 const Navbar = ({ userName, onLogout, onSearch }) => {
+  console.log("username",userName)
   const [search, setSearch] = useState("")
 
-  console.log("search paaaaaliiiiiiiiiiz",search)
-
+  console.log("sarchi bien",search)
+  const navigate = useNavigate()
 
   const handleSearch = (e) => {
     e.preventDefault()
     onSearch(search)
   };
 
-  const onCartClick=()=>{
-// ab9a stana
-  }
+  const onCartClick = () => navigate("/panier")
 
   return (
     <nav className="navbar bg-body-tertiary">
       <div className="container-fluid">
         <img src={logo} alt="Logo" style={{ width: "70px", height: "auto" }} />
         <a className="navbar-brand">Welcome, {userName}</a>
-        <a>All Product</a>
+      
         <form className="d-flex" role="search" onSubmit={handleSearch}>
           <input
             className="form-control me-2"
@@ -36,7 +36,6 @@ const Navbar = ({ userName, onLogout, onSearch }) => {
           </button>
         </form>
         <div className="d-flex">
-       
           <button onClick={onLogout} className="btn btn-outline-danger">
             Logout
           </button>
@@ -44,7 +43,6 @@ const Navbar = ({ userName, onLogout, onSearch }) => {
             Panier
           </button>
         </div>
-
       </div>
     </nav>
   );

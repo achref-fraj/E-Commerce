@@ -4,13 +4,17 @@ module.exports = {
    
     getAllprod: async (req, res) => {
         try {
-            const getprod = await db.Product.findAll();
-            res.send(getprod);
+          const { categoryId } = req.query;
+      
+          const catbyId = categoryId ? { where: { categoryId } } : {};
+          const getprod = await db.Product.findAll(catbyId);
+      
+          res.send(getprod);
         } catch (error) {
-            res.status(500).send({ message: "Error retrieving products", error });
+          res.status(500).send({ message: 'Error retrieving products', error });
         }
-    },
-
+      },
+      
    
     addprod: async (req, res) => {
         try {

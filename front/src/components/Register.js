@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "../css/Auth.css";
 
 const Register = () => {
   const [formData, setFormData] = useState({ userName: "", email: "", password: "" });
@@ -22,9 +23,9 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="auth-container">
       <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="auth-form">
         <input
           type="text"
           name="userName"
@@ -55,4 +56,4 @@ const Register = () => {
   );
 };
 
-export default Register
+export default Register;

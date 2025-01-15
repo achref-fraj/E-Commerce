@@ -1,88 +1,110 @@
-import React from 'react'
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
 export default function Footer() {
   return (
     <div>
-      {/* Remove the container if you want to extend the Footer to full width. */}
       <div className="container my-5">
-        <footer className="text-center text-white" style={{ backgroundColor: '#f1f1f1' }}>
+        <footer className="text-center text-white" style={{ backgroundColor: '#333' }}>
           {/* Grid container */}
           <div className="container pt-4">
-            {/* Section: Social media */}
+            {/* Social Media Section */}
             <section className="mb-4">
-              {/* Facebook */}
               <a
-                className="btn btn-link btn-floating btn-lg text-dark m-1"
+                className="btn btn-link btn-floating btn-lg text-white m-2"
                 href="#!"
                 role="button"
-                data-mdb-ripple-color="dark"
+                aria-label="Facebook"
               >
                 <i className="fab fa-facebook-f"></i>
               </a>
 
-              {/* Twitter */}
               <a
-                className="btn btn-link btn-floating btn-lg text-dark m-1"
+                className="btn btn-link btn-floating btn-lg text-white m-2"
                 href="#!"
                 role="button"
-                data-mdb-ripple-color="dark"
+                aria-label="Twitter"
               >
                 <i className="fab fa-twitter"></i>
               </a>
 
-              {/* Google */}
               <a
-                className="btn btn-link btn-floating btn-lg text-dark m-1"
+                className="btn btn-link btn-floating btn-lg text-white m-2"
                 href="#!"
                 role="button"
-                data-mdb-ripple-color="dark"
+                aria-label="Google"
               >
                 <i className="fab fa-google"></i>
               </a>
 
-              {/* Instagram */}
               <a
-                className="btn btn-link btn-floating btn-lg text-dark m-1"
+                className="btn btn-link btn-floating btn-lg text-white m-2"
                 href="#!"
                 role="button"
-                data-mdb-ripple-color="dark"
+                aria-label="Instagram"
               >
                 <i className="fab fa-instagram"></i>
               </a>
 
-              {/* Linkedin */}
               <a
-                className="btn btn-link btn-floating btn-lg text-dark m-1"
+                className="btn btn-link btn-floating btn-lg text-white m-2"
                 href="#!"
                 role="button"
-                data-mdb-ripple-color="dark"
+                aria-label="LinkedIn"
               >
                 <i className="fab fa-linkedin"></i>
               </a>
 
-              {/* Github */}
               <a
-                className="btn btn-link btn-floating btn-lg text-dark m-1"
+                className="btn btn-link btn-floating btn-lg text-white m-2"
                 href="#!"
                 role="button"
-                data-mdb-ripple-color="dark"
+                aria-label="GitHub"
               >
                 <i className="fab fa-github"></i>
               </a>
             </section>
-            {/* Section: Social media */}
-          </div>
-          {/* Grid container */}
+            {/* End of Social Media Section */}
 
-          {/* Copyright */}
-          <div className="text-center text-dark p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-            © 2020 Copyright:
-            <a className="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            {/* Footer Links Section */}
+            <section>
+              <Row className="text-white">
+                <Col md={4}>
+                  <h5>About</h5>
+                  <ul className="list-unstyled">
+                    <li><a href="#!" className="text-white">Our Story</a></li>
+                    <li><a href="#!" className="text-white">Team</a></li>
+                    <li><a href="#!" className="text-white">Careers</a></li>
+                  </ul>
+                </Col>
+                <Col md={4}>
+                  <h5>Contact</h5>
+                  <ul className="list-unstyled">
+                    <li><a href="#!" className="text-white">Support</a></li>
+                    <li><a href="#!" className="text-white">Contact Us</a></li>
+                    <li><a href="#!" className="text-white">FAQ</a></li>
+                  </ul>
+                </Col>
+                <Col md={4}>
+                  <h5>Follow Us</h5>
+                  <ul className="list-unstyled">
+                    <li><a href="#!" className="text-white">Newsletter</a></li>
+                    <li><a href="#!" className="text-white">Blog</a></li>
+                  </ul>
+                </Col>
+              </Row>
+            </section>
+            {/* End of Footer Links Section */}
           </div>
-          {/* Copyright */}
+          {/* End of Grid container */}
+
+          {/* Copyright Section */}
+          <div className="text-center text-white p-3" style={{ backgroundColor: '#222' }}>
+            <span>© 2025 Your Company | All Rights Reserved.</span>
+          </div>
+          {/* End of Copyright Section */}
         </footer>
       </div>
-      {/* End of .container */}
     </div>
-  )
+  );
 }

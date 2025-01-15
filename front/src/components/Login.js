@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "axios"
+import "../css/Auth.css"
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
-  console.log("formData",formData)
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -24,9 +24,9 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="auth-container">
       <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="auth-form">
         <input
           type="email"
           name="email"

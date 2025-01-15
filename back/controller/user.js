@@ -8,7 +8,7 @@ const bcrypt = require("bcrypt");
 module.exports={
     getAlluser:async(req,res)=>{
         try {
-            const getuser=await User.findAll()
+            const getuser=await db.User.findAll()
             res.send(getuser)
             
         } catch (error) {

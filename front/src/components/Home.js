@@ -1,16 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
 import Carousell from "./Carousell";
 import ProductList from "./ProductList";
 import Footer from "./Footer";
-import Category  from "../components/Category";
+import Category from "../components/Category";
 
-const Home = () => {
-  const [userName, setUserName] = useState("");
-  const [search, setSearch] = useState("");
+const Home = ({ cart, setCart }) => {
+  const [userName, setUserName] = useState("")
 
+  const [search, setSearch] = useState("")
 
+  console.log("search belehy",search)
+
+  const [selectedCategoryId, setSelectedCategoryId] = useState(null);
+
+  const handleCategoryChange = (categoryId) => setSelectedCategoryId(categoryId);
 
   const fetchCurrentUser = async () => {
     try {
@@ -20,37 +25,35 @@ const Home = () => {
       });
       setUserName(response.data.userName);
     } catch (error) {
-      alert("Failed to fetch user details")
+      alert("Failed to fetch user details");
     }
   };
 
   const handleLogout = () => {
     localStorage.removeItem("token")
-    window.location.href = "/login"
+    window.location.href = "/login" 
   };
+
+  const handleSearch = (query) => setSearch(query)
+
+  const handleAddToCart = (product) => setCart([...cart, product]);
 
   useEffect(() => {
     fetchCurrentUser();
   }, []);
 
-  const handleSearch = (lawejbjehrabi) => {
-    setSearch(lawejbjehrabi)
-  };
-
   return (
     <div>
       <Navbar userName={userName} onLogout={handleLogout} onSearch={handleSearch} />
-      <div><Carousell /></div>
-
+      <Carousell />
       <h3 className="product-list-title">Product List</h3>
-      
-      <div>
-        <Category></Category>
-      </div>
-
-
-      <div><ProductList search={search} /></div>
-      <div><Footer /></div>
+      <Category onCategoryChange={handleCategoryChange} />
+      <ProductList
+        search={search}
+        selectedCategoryId={selectedCategoryId}
+        onAddToCart={handleAddToCart}
+      />
+      <Footer />
     </div>
   );
 };

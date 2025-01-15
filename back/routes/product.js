@@ -6,9 +6,9 @@ const {getAllprod,addprod,deleteprod,update}=require("../controller/product")
 
 
 Router.get("/",getAllprod)
-Router.post("/add", addprod);
-Router.post("/delete", deleteprod);
-Router.get("/update", update);
+Router.post("/add", addprod)
+Router.delete("/:id", deleteprod)
+Router.get("/update", update)
 
 
 
