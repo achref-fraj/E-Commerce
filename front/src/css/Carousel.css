@@ -1,0 +1,7 @@
+.carousel-image {
+    width: 100%; /* Adjust to desired width, e.g., 80% for smaller images */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 500px; /* Set a maximum height if needed */
+    object-fit: cover; /* Ensures images are properly cropped if they don't fit */
+  }
+  

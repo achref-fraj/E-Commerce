@@ -1,0 +1,18 @@
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Adjust gap between cards */
+    justify-content: space-around;
+  }
+  
+  .card {
+    margin-bottom: 20px; /* Optional: Add space at the bottom of the cards */
+  }
+  
+  .product-list-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px; /* Optional: Adjust the font size */
+    font-weight: bold; /* Optional: Make it bold */
+  }
+  
