@@ -8,6 +8,7 @@ import Category from "../components/Category";
 
 const Home = ({ cart, setCart }) => {
   const [userName, setUserName] = useState("")
+  console.log("ab3eth aka user name ",userName)
 
   const [search, setSearch] = useState("")
 

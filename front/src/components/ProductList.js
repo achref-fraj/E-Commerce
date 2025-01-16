@@ -57,7 +57,7 @@ export default function ProductList({ search, selectedCategoryId, onAddToCart })
             <p className="card-text">Price: {ele.price}</p>
             <button
               className="btn btn-primary"
-              onClick={() => onAddToCart(ele)} // Call the onAddToCart function with the product
+              onClick={() => onAddToCart(ele)} 
             >
               Add to Cart
             </button>

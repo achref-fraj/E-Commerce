@@ -4,11 +4,11 @@ export default function Panier({ cart, setCart }) {
 
 
   const handelremove = (productId) => {
-    setCart(cart.filter((item) => item.id !== productId));
+    setCart(cart.filter((item) => item.id !== productId))
   };
 
   const calculateTotal = () =>
-    cart.reduce((total, product) => total + product.price, 0);
+    cart.reduce((total, product) => total + product.price, 0)
 
   return (
     <div>
